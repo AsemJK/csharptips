@@ -6,6 +6,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 - [Tip 3: Constructors](#tip-3-constructors)
 - [Tip 4: Static field vs Const](#tip-4-static-field-vs-const)
 - [Tip 5: Using Static Statements](#tip-5-using-static-statements)
+- [Tip 6: Destructor vs Deconstructer](#tip-6-destructor-vs-deconstructer)
 
 
 
@@ -106,7 +107,45 @@ class Program
     }
 }
 ```
-
+## Tip 6: Destructor vs Deconstructer
+A **destructor** is a special method that is called when an object is about to be destroyed. It is used to clean up resources that the object may be holding, but rerely used because the Garbage Collector automatically handle the memory.
+A **deconstructor** is a method that allows you to decompose an object into its constituent parts. It is often used in conjunction with tuples and pattern matching.
+Example:
+```csharp
+public class Point
+{
+    public int X { get; }
+    public int Y { get; }
+    public Point(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+    // Deconstructor
+    public void Deconstruct(out int x, out int y)
+    {
+        x = X;
+        y = Y;
+    }
+    // Destructor (not commonly used in C#)
+    ~Point()
+    {
+        // Cleanup code here (if needed)
+        Console.WriteLine("Point object is being destroyed");
+    }
+}
+// Usage
+class Program
+{
+    static void Main(string[] args)
+    {
+        Point point = new Point(10, 20);
+        // Using deconstructor
+        var (x, y) = point;
+        Console.WriteLine($"Point coordinates: X = {x}, Y = {y}");
+    }
+}
+```
 
 
 
