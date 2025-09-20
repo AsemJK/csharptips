@@ -149,7 +149,10 @@ class Program
 ```
 ## Tip 7: Value vs Reference Type
 In C#, types are divided into two categories: **value types** and **reference types**.
-- **Value Types**: These types store the actual data in memory blocks. When you assign a value type to another variable, a copy of the value is made. Examples include `int`, `float`, `bool`, and `struct`.
+- **Value Types**: These types store the actual data in memory blocks. When you assign a value type to another variable, a copy of the value is made.
+  for example declaring an int variable causes the
+compiler to allocate 4 bytes of memory (32 bits) to hold the integer value. A statement that assigns a
+value (such as 42) to the int causes the value to be copied into this block of memory.. Examples include `int`, `float`, `bool`, and `struct`.
 - **Reference Types**: These types store a reference (or address) to the actual data. suppose we have an object named "Circle" when we declare that object the compiler does not generate code that allocates a block of memory big enough to
 hold a Circle object. All it does is allot a small piece of memory that can potentially hold the address
 of (or a reference to) another block of memory containing a Circle object. (An address specifies the
