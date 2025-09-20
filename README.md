@@ -3,6 +3,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 ## Table of Contents
 - [Tip 1: Method vs Function](#tip-1-method-vs-function)
 - [Tip 2: Parameter Vs Argument](#tip-2-parameter-vs-argument)
+- [Tip 3: Constructors] (#tip-3-constructors)
 
 
 
@@ -32,6 +33,21 @@ PrintMessage("Hello, World!"); // "Hello, World!" is an argument
 الحجة (Argument) هي القيمة الفعلية التي يتم تمريرها إلى الدالة أو الطريقة عند استدعائها.
 
 
+## Tip 3: Constructors
+A **constructor** is a special method that is called when an object of a class is created. It is used to initialize the object's properties.
+Circle class example
+First using default contructor
+```csharp
+Circle defaultCircle = new Circle();
+Console.WriteLine($"Default Circle Area: {defaultCircle.Area()}"); // Radius is 0, so area is 0
+```
+Then using parameterized constructor
+```csharp
+Circle circle = new Circle(5);
+Console.WriteLine($"Circle Area: {circle.Area()}"); // Area = π * r^2 = π * 5^2 = 78.54
+Console.WriteLine($"Circle Circumference: {circle.Circumference()}"); // Circumference = 2 * π * r = 2 * π * 5 = 31.42
+                                                                     //Note: Math.PI is a constant in the Math class that represents the value of π (pi) to a high degree of precision.
+```
 
 
 ## Contributing

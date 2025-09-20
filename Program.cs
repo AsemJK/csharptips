@@ -11,3 +11,13 @@ Console.WriteLine("Hello, World!");
 //- concept of adding two numbers together called add function.
 MethodVsFunc methodVsFunc = new MethodVsFunc();
 methodVsFunc.Run();
+
+//Circle class example
+//First using default constructor
+Circle defaultCircle = new Circle();
+Console.WriteLine($"Default Circle Area: {defaultCircle.Area()}"); // Radius is 0, so area is 0
+
+Circle circle = new Circle(5);
+Console.WriteLine($"Circle Area: {circle.Area()}"); // Area = π * r^2 = π * 5^2 = 78.54
+Console.WriteLine($"Circle Circumference: {circle.Circumference()}"); // Circumference = 2 * π * r = 2 * π * 5 = 31.42
+                                                                      //Note: Math.PI is a constant in the Math class that represents the value of π (pi) to a high degree of precision.
