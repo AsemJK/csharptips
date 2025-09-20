@@ -17,6 +17,16 @@ A **method** is a function that belongs to an object or class.
 A **parameter** is a variable in the declaration of a function or method.
 An **argument** is the actual value that is passed to the function or method when it is called.
 
+Example:
+
+```csharp
+public void PrintMessage(string message) // 'message' is a parameter
+{
+    Console.WriteLine(message);
+}
+PrintMessage("Hello, World!"); // "Hello, World!" is an argument
+```
+
 بالعربي و مختصر الكلام
 المُعامل (Parameter) هو متغير يتم تعريفه في توقيع الدالة أو الطريقة.
 الحجة (Argument) هي القيمة الفعلية التي يتم تمريرها إلى الدالة أو الطريقة عند استدعائها.
