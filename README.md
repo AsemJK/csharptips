@@ -8,6 +8,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 - [Tip 5: Using Static Statements](#tip-5-using-static-statements)
 - [Tip 6: Destructor vs Deconstructer](#tip-6-destructor-vs-deconstructer)
 - [Tip 7: Value vs Reference Type](#tip-7-value-vs-reference-type)
+- [Tip 8: String type is a class](#tip-8-string-type-is-a-class)
 
 
 
@@ -159,6 +160,13 @@ of (or a reference to) another block of memory containing a Circle object. (An a
 location of an item in memory.) The memory for the actual Circle object is allocated only when the
 _**new**_ keyword is used to create the object.. Examples include `class`, `array`, `string`, and `interface`.
 
+## Tip 8: String type is a class
+The string type in C# is actually a class. This is because there is no standard size
+for a string (different strings can contain different numbers of characters), and allocating
+memory for a string dynamically when the program runs is far more efficient than doing so
+statically at compile time. The description in this chapter of reference types such as classes
+applies to the string type as well. In fact, the string keyword in C# is just an alias for the
+System.String class.
 
 
 
