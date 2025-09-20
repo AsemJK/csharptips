@@ -4,6 +4,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 - [Tip 1: Method vs Function](#tip-1-method-vs-function)
 - [Tip 2: Parameter Vs Argument](#tip-2-parameter-vs-argument)
 - [Tip 3: Constructors] (#tip-3-constructors)
+- [Tip 4: Static field vs Const](#tip-4-static-field-vs-const)
 
 
 
@@ -54,6 +55,49 @@ Console.WriteLine($"Circle Circumference: {circle.Circumference()}"); // Circumf
                                                                      //Note: Math.PI is a constant in the Math class that represents the value of π (pi) to a high degree of precision.
 ```
 
+## Tip 4: Static field vs Const
+A **static field** is a variable that is shared among all instances of a class. It can be changed at runtime.
+A **const** is a variable whose value cannot be changed after it is initialized. It is implicitly static and must be initialized at the time of declaration.
+Example:
+```csharp
+    internal class StaticClassA
+    {
+        public static int StaticProperty { get; set; } = 42;
+        public const int StaticProperty2 = 43;
+        public StaticClassA() { }
+
+    }
+
+//Program.cs
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Accessing static field
+            Console.WriteLine($"Static Property: {StaticClassA.StaticProperty}"); // Output: 42
+            // Modifying static field
+            StaticClassA.StaticProperty = 100;
+            Console.WriteLine($"Modified Static Property: {StaticClassA.StaticProperty}"); // Output: 100
+            // Accessing const field
+            Console.WriteLine($"Const Property: {StaticClassA.StaticProperty2}"); // Output: 43
+            // Attempting to modify const field (uncommenting the next line will cause a compile-time error)
+            // StaticClassA.StaticProperty2 = 200; // Error: The left-hand side of an assignment must be a variable, property or indexer
+        }
+    }
+```
+
+
+
+
+
+
+
+
+
+
+### Note
+- If no constructor is defined, C# provides a default constructor that initializes all fields to their default values.
+  But if you define any constructor, the default constructor is not provided automatically, if you want the default one you should write it by yourself.
 
 ## Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any tips to share or improvements to suggest.
