@@ -7,6 +7,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 - [Tip 4: Static field vs Const](#tip-4-static-field-vs-const)
 - [Tip 5: Using Static Statements](#tip-5-using-static-statements)
 - [Tip 6: Destructor vs Deconstructer](#tip-6-destructor-vs-deconstructer)
+- [Tip 7: Value vs Reference Type](#tip-7-value-vs-reference-type)
 
 
 
@@ -146,7 +147,14 @@ class Program
     }
 }
 ```
-
+## Tip 7: Value vs Reference Type
+In C#, types are divided into two categories: **value types** and **reference types**.
+- **Value Types**: These types store the actual data in memory blocks. When you assign a value type to another variable, a copy of the value is made. Examples include `int`, `float`, `bool`, and `struct`.
+- **Reference Types**: These types store a reference (or address) to the actual data. suppose we have an object named "Circle" when we declare that object the compiler does not generate code that allocates a block of memory big enough to
+hold a Circle object. All it does is allot a small piece of memory that can potentially hold the address
+of (or a reference to) another block of memory containing a Circle object. (An address specifies the
+location of an item in memory.) The memory for the actual Circle object is allocated only when the
+_**new**_ keyword is used to create the object.. Examples include `class`, `array`, `string`, and `interface`.
 
 
 
