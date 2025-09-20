@@ -9,6 +9,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 - [Tip 6: Destructor vs Deconstructer](#tip-6-destructor-vs-deconstructer)
 - [Tip 7: Value vs Reference Type](#tip-7-value-vs-reference-type)
 - [Tip 8: String type is a class](#tip-8-string-type-is-a-class)
+- [Tip 9: Boxing vs Unboxing](#tip-9-boxing-vs-unboxing)
 
 
 
@@ -168,14 +169,21 @@ statically at compile time. The description in this chapter of reference types s
 applies to the string type as well. In fact, the string keyword in C# is just an alias for the
 System.String class.
 
+## Tip 9: Boxing vs Unboxing
+**Boxing** is the process of converting a value type to a reference type by wrapping the value inside an object. 
+This allows value types to be treated as objects, Actually there is a place in the HEAP (Piece of Memory) this converted value stored there.
+**Unboxing** is the reverse process of extracting the value type from the object.
+Example:
+```csharp
+int value = 42; // Value type
+object boxedValue = value; // Boxing: converting value type to reference type
+int unboxedValue = (int)boxedValue; // Unboxing: converting reference type back to value type
+```
 
 
 
 
 
-
-## Contributing
-Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any tips to share or improvements to suggest.
 ## License
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 ## Contact
