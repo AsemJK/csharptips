@@ -28,4 +28,11 @@ WriteLine($"Static Property: {ClassA.StaticProperty}");
 ClassA.StaticProperty = 100;
 WriteLine($"Static Property: {ClassA.StaticProperty}");
 WriteLine($"Static Property2: {ClassA.StaticProperty2}"); // Const property cannot be changed
-                                                                        //ClassA.StaticProperty2 = 200; // This line would cause a compile-time error because StaticProperty2 is a constant and cannot be changed.
+                                                          //ClassA.StaticProperty2 = 200; // This line would cause a compile-time error because StaticProperty2 is a constant and cannot be changed.
+
+//ClassB instance count example
+ClassB obj1 = new ClassB();
+ClassB obj2 = new ClassB(10, 20);
+WriteLine($"ClassB Instance Count: {ClassB.GetInstanceCount()}"); // Output: 2
+ClassB obj3 = new ClassB();
+WriteLine($"ClassB Instance Count: {ClassB.GetInstanceCount()}"); // Output: 3
