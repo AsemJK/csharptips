@@ -3,8 +3,9 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 ## Table of Contents
 - [Tip 1: Method vs Function](#tip-1-method-vs-function)
 - [Tip 2: Parameter Vs Argument](#tip-2-parameter-vs-argument)
-- [Tip 3: Constructors] (#tip-3-constructors)
+- [Tip 3: Constructors](#tip-3-constructors)
 - [Tip 4: Static field vs Const](#tip-4-static-field-vs-const)
+- [Tip 5: Using Static Statements](#tip-5-using-static-statements)
 
 
 
@@ -89,7 +90,22 @@ Example:
         }
     }
 ```
-
+## Tip 5: Using Static Statements
+The `using static` directive allows you to import static members of a class so that you can use them without qualifying them with the class name.
+Example:
+```csharp
+using System;
+using static System.Math; // Importing static members of the Math class
+class Program
+{
+    static void Main(string[] args)
+    {
+        double radius = 5.0;
+        double area = PI * Pow(radius, 2); // Using PI and Pow without Math. prefix
+        Console.WriteLine($"Area of circle with radius {radius} is {area}");
+    }
+}
+```
 
 
 
