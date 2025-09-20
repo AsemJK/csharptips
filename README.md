@@ -64,11 +64,11 @@ A **static field** is a variable that is shared among all instances of a class. 
 A **const** is a variable whose value cannot be changed after it is initialized. It is implicitly static and must be initialized at the time of declaration.
 Example:
 ```csharp
-    internal class StaticClassA
+    internal class ClassA
     {
         public static int StaticProperty { get; set; } = 42;
         public const int StaticProperty2 = 43;
-        public StaticClassA() { }
+        public ClassA() { }
 
     }
 
@@ -78,14 +78,14 @@ Example:
         static void Main(string[] args)
         {
             // Accessing static field
-            Console.WriteLine($"Static Property: {StaticClassA.StaticProperty}"); // Output: 42
+            Console.WriteLine($"Static Property: {ClassA.StaticProperty}"); // Output: 42
             // Modifying static field
-            StaticClassA.StaticProperty = 100;
-            Console.WriteLine($"Modified Static Property: {StaticClassA.StaticProperty}"); // Output: 100
+            ClassA.StaticProperty = 100;
+            Console.WriteLine($"Modified Static Property: {ClassA.StaticProperty}"); // Output: 100
             // Accessing const field
-            Console.WriteLine($"Const Property: {StaticClassA.StaticProperty2}"); // Output: 43
+            Console.WriteLine($"Const Property: {ClassA.StaticProperty2}"); // Output: 43
             // Attempting to modify const field (uncommenting the next line will cause a compile-time error)
-            // StaticClassA.StaticProperty2 = 200; // Error: The left-hand side of an assignment must be a variable, property or indexer
+            // ClassA.StaticProperty2 = 200; // Error: The left-hand side of an assignment must be a variable, property or indexer
         }
     }
 ```

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace csharptips
 {
-    internal class StaticClassA
+    internal class ClassA
     {
         public static int StaticProperty { get; set; } = 42;
         public const int StaticProperty2 = 43;
-        public StaticClassA() { }
+        public ClassA() { }
 
     }
 }

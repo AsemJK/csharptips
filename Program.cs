@@ -23,8 +23,8 @@ Console.WriteLine($"Circle Circumference: {circle.Circumference()}"); // Circumf
                                                                       //Note: Math.PI is a constant in the Math class that represents the value of π (pi) to a high degree of precision.
 
 //Static class example
-Console.WriteLine($"Static Property: {StaticClassA.StaticProperty}");
-StaticClassA.StaticProperty = 100;
-Console.WriteLine($"Static Property: {StaticClassA.StaticProperty}");
-Console.WriteLine($"Static Property2: {StaticClassA.StaticProperty2}"); // Const property cannot be changed
-                                                                        //StaticClassA.StaticProperty2 = 200; // This line would cause a compile-time error because StaticProperty2 is a constant and cannot be changed.
+Console.WriteLine($"Static Property: {ClassA.StaticProperty}");
+ClassA.StaticProperty = 100;
+Console.WriteLine($"Static Property: {ClassA.StaticProperty}");
+Console.WriteLine($"Static Property2: {ClassA.StaticProperty2}"); // Const property cannot be changed
+                                                                        //ClassA.StaticProperty2 = 200; // This line would cause a compile-time error because StaticProperty2 is a constant and cannot be changed.
