@@ -12,3 +12,21 @@ A **method** is a function that belongs to an object or class.
 بالعربي و مختصر الكلام
 الوظيفة (Function) هي قطعة من الكود تقوم بمهمة معينة ويمكن أن توجد بشكل مستقل علما أنه في سي شارب لا يوجد كود يكتب خارج كلاس بالعموم.
 الطريقة (Method) هي مجموعة التعليمات و الوظائف مثل العمليات الحسابية و غيرها من عمليات معالجة أو استدعاء بيانات إلخ.. و كل ذلك ضمن بلوك ينتمي لكلاس حصرا, بالتالي في برمجة كائنية التوجه كل الدوال هي طرق
+
+## Tip 2: Parameter Vs Argument
+A **parameter** is a variable in the declaration of a function or method.
+An **argument** is the actual value that is passed to the function or method when it is called.
+
+بالعربي و مختصر الكلام
+المُعامل (Parameter) هو متغير يتم تعريفه في توقيع الدالة أو الطريقة.
+الحجة (Argument) هي القيمة الفعلية التي يتم تمريرها إلى الدالة أو الطريقة عند استدعائها.
+
+
+
+
+## Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any tips to share or improvements to suggest.
+## License
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+## Contact
+For any questions or suggestions, please contact [Asem Alsaiyadi](mailto:asemalsaiyadi@gmail.com).
