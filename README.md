@@ -54,6 +54,10 @@ Console.WriteLine($"Circle Area: {circle.Area()}"); // Area = π * r^2 = π * 5^
 Console.WriteLine($"Circle Circumference: {circle.Circumference()}"); // Circumference = 2 * π * r = 2 * π * 5 = 31.42
                                                                      //Note: Math.PI is a constant in the Math class that represents the value of π (pi) to a high degree of precision.
 ```
+### Note
+- If no constructor is defined, C# provides a default constructor that initializes all fields to their default values.
+  But if you define any constructor, the default constructor is not provided automatically, if you want the default one you should write it by yourself.
+
 
 ## Tip 4: Static field vs Const
 A **static field** is a variable that is shared among all instances of a class. It can be changed at runtime.
@@ -95,9 +99,6 @@ Example:
 
 
 
-### Note
-- If no constructor is defined, C# provides a default constructor that initializes all fields to their default values.
-  But if you define any constructor, the default constructor is not provided automatically, if you want the default one you should write it by yourself.
 
 ## Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any tips to share or improvements to suggest.
