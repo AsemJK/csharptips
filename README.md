@@ -36,12 +36,17 @@ PrintMessage("Hello, World!"); // "Hello, World!" is an argument
 ## Tip 3: Constructors
 A **constructor** is a special method that is called when an object of a class is created. It is used to initialize the object's properties.
 Circle class example
+المنشئ (Constructor) هو طريقة خاصة يتم استدعاؤها عند إنشاء كائن من فئة معينة. يتم استخدامه لتهيئة خصائص الكائن.
+مثال على كلاس دائرة
+
 First using default contructor
+في حال استخدام المُنشئ الافتراضي
 ```csharp
 Circle defaultCircle = new Circle();
 Console.WriteLine($"Default Circle Area: {defaultCircle.Area()}"); // Radius is 0, so area is 0
 ```
 Then using parameterized constructor
+باستخدام المُنشئ المُعطى بالمعاملات
 ```csharp
 Circle circle = new Circle(5);
 Console.WriteLine($"Circle Area: {circle.Area()}"); // Area = π * r^2 = π * 5^2 = 78.54
