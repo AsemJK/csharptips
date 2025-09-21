@@ -2,6 +2,7 @@
 using csharptips;
 using static System.Console;
 
+/*
 WriteLine("Hello, World!");
 
 //Method vs Func example
@@ -36,3 +37,28 @@ ClassB obj2 = new ClassB(10, 20);
 WriteLine($"ClassB Instance Count: {ClassB.GetInstanceCount()}"); // Output: 2
 ClassB obj3 = new ClassB();
 WriteLine($"ClassB Instance Count: {ClassB.GetInstanceCount()}"); // Output: 3
+*/
+//array example
+int[] numbers = { 1, 2, 3, 4, 5 };
+var sub1 = numbers[0..2];
+var sub2 = numbers[1..2];
+
+//print sub1
+WriteLine("Sub1:");
+foreach (var item in sub1)
+{
+    WriteLine(item);
+}
+
+var cust_arr = new[]
+{
+    new { Name = "Alice", Age = 30 },
+    new { Name = "Bob", Age = 25 },
+    new { Name = "Charlie", Age = 35 }
+};
+var sub3 = cust_arr[0..2];
+WriteLine("Sub3:");
+foreach (var item in sub3)
+{
+    WriteLine($"{item.Name}, {item.Age}");
+}
