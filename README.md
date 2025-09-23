@@ -10,6 +10,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 - [Tip 7: Value vs Reference Type](#tip-7-value-vs-reference-type)
 - [Tip 8: String type is a class](#tip-8-string-type-is-a-class)
 - [Tip 9: Boxing vs Unboxing](#tip-9-boxing-vs-unboxing)
+- [Tip 10: OOP](#tip-10-oop)
 
 
 
@@ -180,6 +181,11 @@ object boxedValue = value; // Boxing: converting value type to reference type
 int unboxedValue = (int)boxedValue; // Unboxing: converting reference type back to value type
 ```
 
+## Tip 10: OOP
+- **Encapsulation**: _Reduce Complexity & Increase Reusability_ Bundling data and methods that operate on the data within a single unit or class, restricting access to some components.
+- **Abstraction**: _Reduce Complexity & Isolate Impacts of Changes_ Hiding complex implementation details and showing only the necessary parts of an object.
+- **Inheritance**: _Eliminate Redundant Code & Improve Code Reusability_ A mechanism where a new class can inherit, لإزالة الإسهاب في الكود
+- **Polymorphism**: _Simplify Code & Improve Maintainability & Refactor Ugly switch/case Statements_ The ability of different classes to be treated as instances of the same class through a common interface, allowing methods to operate on objects of different types.
 
 
 
