@@ -11,6 +11,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 - [Tip 8: String type is a class](#tip-8-string-type-is-a-class)
 - [Tip 9: Boxing vs Unboxing](#tip-9-boxing-vs-unboxing)
 - [Tip 10: OOP](#tip-10-oop)
+- [Tip 11: Interface Implementation Means](#tip-11-interface-implementation-means)
 
 
 
@@ -187,6 +188,9 @@ int unboxedValue = (int)boxedValue; // Unboxing: converting reference type back 
 - **Inheritance**: _Eliminate Redundant Code & Improve Code Reusability_ A mechanism where a new class can inherit, لإزالة الإسهاب في الكود
 - **Polymorphism**: _Simplify Code & Improve Maintainability & Refactor Ugly switch/case Statements_ The ability of different classes to be treated as instances of the same class through a common interface, allowing methods to operate on objects of different types.
 
+## Tip 11: Interface Implementation Means
+When a class implements an interface, it is essentially entering into a contract to provide specific functionality defined by that interface. This means the class must provide concrete implementations for all the methods, properties, and events declared in the interface. By doing so, the class agrees to adhere to the structure and behavior outlined by the interface, ensuring consistency and predictability when interacting with instances of that class through the interface type.
+From OOP perspective, implementing an interface allows a class to exhibit polymorphic behavior. This means that objects of the class can be treated **as instances of the interface type**, enabling flexibility and interchangeability in code. It promotes loose coupling, as the code that uses the interface does not need to know the details of the implementing class, only that it adheres to the interface's contract.
 
 
 
