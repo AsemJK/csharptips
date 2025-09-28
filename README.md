@@ -132,7 +132,7 @@ public class Point
         x = X;
         y = Y;
     }
-    // Destructor (not commonly used in C#)
+    // Destructor (not commonly used in C#) or finalizer
     ~Point()
     {
         // Cleanup code here (if needed)
@@ -151,6 +151,13 @@ class Program
     }
 }
 ```
+- Finalizers (destructors) are not commonly used in C# because the garbage collector automatically handles memory management. However, they can be useful for cleaning up unmanaged resources, such as file handles or database connections, that the garbage collector does not manage.
+  The compiler translates destructors into overrides of the `Object.Finalize` method. When a destructor is defined, the compiler adds code to ensure that the destructor is called by the garbage collector before the object's memory is reclaimed.
+  `~ClassName() { // cleanup code }`
+- This will translate to:
+  `protected override void Finalize() { try { // cleanup code } finally { base.Finalize(); } }`
+
+
 ## Tip 7: Value vs Reference Type
 In C#, types are divided into two categories: **value types** and **reference types**.
 - **Value Types**: These types store the actual data in memory blocks. When you assign a value type to another variable, a copy of the value is made.
