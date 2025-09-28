@@ -12,6 +12,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 - [Tip 9: Boxing vs Unboxing](#tip-9-boxing-vs-unboxing)
 - [Tip 10: OOP](#tip-10-oop)
 - [Tip 11: Interface Implementation Means](#tip-11-interface-implementation-means)
+- [Tip 12: Why we need Garbage Collector](#tip-12-why-we-need-garbage-collector)
 
 
 
@@ -199,6 +200,73 @@ int unboxedValue = (int)boxedValue; // Unboxing: converting reference type back 
 When a class implements an interface, it is essentially entering into a contract to provide specific functionality defined by that interface. This means the class must provide concrete implementations for all the methods, properties, and events declared in the interface. By doing so, the class agrees to adhere to the structure and behavior outlined by the interface, ensuring consistency and predictability when interacting with instances of that class through the interface type.
 From OOP perspective, implementing an interface allows a class to exhibit polymorphic behavior. This means that objects of the class can be treated **as instances of the interface type**, enabling flexibility and interchangeability in code. It promotes loose coupling, as the code that uses the interface does not need to know the details of the implementing class, only that it adheres to the interface's contract.
 
+## Tip 12: Why we need Garbage Collector
+In C#, memory management is handled by the Garbage Collector (GC), which automatically manages the allocation and deallocation of memory for objects. The primary reasons we need a Garbage Collector are:
+Example:
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Creating an object of the Circle class
+        Circle circle = new Circle(5);
+        Console.WriteLine($"Circle Area: {circle.Area()}");
+        // The circle object will be automatically cleaned up by the Garbage Collector when it is no longer needed
+    }
+}
+```
+Example of a class that might need cleanup
+```csharp
+FileProcessor myFp = new FileProcessor();
+FileProcessor referenceToMyFp = myFp;
+myFp = null; // Now the original FileProcessor object is eligible for garbage collection
+```
+But !!
+If the variable myFp disappears (by going
+out of scope), other variables (such as referenceToMyFp) might still exist
+So the object is not eligible for garbage collection until all references to it are gone.
+
+```csharp
+class FileProcessor
+{
+    private FileStream fileStream;
+    public FileProcessor(string filePath)
+    {
+        fileStream = new FileStream(filePath, FileMode.Open);
+    }
+    public void ProcessFile()
+    {
+        // File processing logic here
+    }
+    // Destructor (finalizer) to clean up unmanaged resources
+    ~FileProcessor()
+    {
+        if (fileStream != null)
+        {
+            fileStream.Close();
+            fileStream = null;
+        }
+    }
+}
+```
+
+
+The Garbage Collector helps in:
+1. **Automatic Memory Management**: It automatically frees up memory occupied by objects that are no longer in use, reducing the risk of memory leaks and other memory-related issues.
+2. **Simplified Development**: Developers do not need to manually manage memory allocation and deallocation, allowing them to focus on writing code rather than worrying about memory management.
+3. **Improved Performance**: By efficiently managing memory, the Garbage Collector can help improve the overall performance of applications, especially in scenarios with frequent object creation and destruction.
+4. **Memory Optimization**: The Garbage Collector can optimize memory usage by compacting memory and reducing fragmentation, leading to better utilization of available memory resources.
+5. **Safety**: It helps prevent common memory management errors, such as dangling pointers and double frees, which can lead to application crashes and undefined behavior.
+6. **Cross-Platform Consistency**: The Garbage Collector provides a consistent memory management model across different platforms and environments, making it easier to develop cross-platform applications.
+7. **Handling Complex Object Graphs**: In applications with complex object relationships, the Garbage Collector can effectively manage memory by tracking object references and ensuring that all unreachable objects are collected.
+8. **Support for Modern Programming Paradigms**: The Garbage Collector supports modern programming paradigms, such as functional programming and asynchronous programming, by managing memory in a way that aligns with these paradigms' requirements.
+
+- The garbage collector makes the following guarantees:
+  -  Every object will be destroyed. When a program ends, all outstanding objects will be destroyed.
+However, any finalizers that haven’t been run by the time the program finishes might not be run at all.
+  - Every object will be destroyed at most once.
+  - Every object will be destroyed only when it becomes unreachable—that is, when there are no
+references to the object in the process running your application.
 
 
 ## License
