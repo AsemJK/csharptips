@@ -114,7 +114,7 @@ class Program
 ```
 ## Tip 6: Destructor vs Deconstructer
 A **destructor** is a special method that is called when an object is about to be destroyed. It is used to clean up resources that the object may be holding, but rerely used because the Garbage Collector automatically handle the memory.
-A **deconstructor** is a method that allows you to decompose an object into its constituent parts. It is often used in conjunction with tuples and pattern matching.
+A **deconstructor** is a method that allows you to decompose an object into its constituent (المكوّن) parts. It is often used in conjunction with tuples and pattern matching.
 Example:
 ```csharp
 public class Point
