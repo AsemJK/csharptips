@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using csharptips;
-using static System.Console;
+using csharptips.DataTypes;
 
 /*
 WriteLine("Hello, World!");
@@ -39,6 +38,7 @@ ClassB obj3 = new ClassB();
 WriteLine($"ClassB Instance Count: {ClassB.GetInstanceCount()}"); // Output: 3
 */
 //array example
+/*
 int[] numbers = { 1, 2, 3, 4, 5 };
 var sub1 = numbers[0..2];
 var sub2 = numbers[1..2];
@@ -62,3 +62,6 @@ foreach (var item in sub3)
 {
     WriteLine($"{item.Name}, {item.Age}");
 }
+*/
+
+Types.Run();
