@@ -13,6 +13,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
 - [Tip 10: OOP](#tip-10-oop)
 - [Tip 11: Interface Implementation Means](#tip-11-interface-implementation-means)
 - [Tip 12: Why we need Garbage Collector](#tip-12-why-we-need-garbage-collector)
+- [Tip 13: Delegates](#tip-13-delegates))
 
 
 
@@ -268,6 +269,9 @@ However, any finalizers that haven’t been run by the time the program finishes
   - Every object will be destroyed only when it becomes unreachable—that is, when there are no
 references to the object in the process running your application.
 
+
+## Tip 13: Delegates
+### Store method references in variables / Store a function within a variable/parameter
 
 ## License
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
