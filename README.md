@@ -17,6 +17,7 @@ This repository contains a collection of tips and tricks for C# programming. Eac
   - [Tip 11: Interface Implementation Means](#tip-11-interface-implementation-means)
   - [Tip 12: Why we need Garbage Collector](#tip-12-why-we-need-garbage-collector)
   - [Tip 13: Delegates](#tip-13-delegates)
+  - [Tip 14: Automatic properties Initialization](#tip-14-automatic-properties-initialization)
   - [License](#license)
   - [Contact](#contact)
 
@@ -295,7 +296,20 @@ class Program
 }
 ```
 
-  
+## Tip 14: Automatic Properties Initialization
+Start from C# 9.0 and later provides automatic init-only properties to handle this situation. You
+create an init-only property by using an init accessor. The following example shows a class that captures
+student grade information for a school:
+```c#
+class Grade
+{
+    public int StudentID { get; init; }
+    public string Subject { get; init; }
+    public char SubjectGrade { get; init; }
+}
+//You can create a new Grade object and initialize its values as before:
+var grade1 = new Grade() { StudentID = 1, Subject = "Math", SubjectGrade = 'A' };
+```
 
 
 ## License
