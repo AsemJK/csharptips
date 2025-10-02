@@ -1,19 +1,24 @@
 ﻿# cSharp Tips
 This repository contains a collection of tips and tricks for C# programming. Each tip is designed to help you write cleaner, more efficient, and more maintainable code.
 ## Table of Contents
-- [Tip 1: Method vs Function](#tip-1-method-vs-function)
-- [Tip 2: Parameter Vs Argument](#tip-2-parameter-vs-argument)
-- [Tip 3: Constructors](#tip-3-constructors)
-- [Tip 4: Static field vs Const](#tip-4-static-field-vs-const)
-- [Tip 5: Using Static Statements](#tip-5-using-static-statements)
-- [Tip 6: Destructor vs Deconstructer](#tip-6-destructor-vs-deconstructer)
-- [Tip 7: Value vs Reference Type](#tip-7-value-vs-reference-type)
-- [Tip 8: String type is a class](#tip-8-string-type-is-a-class)
-- [Tip 9: Boxing vs Unboxing](#tip-9-boxing-vs-unboxing)
-- [Tip 10: OOP](#tip-10-oop)
-- [Tip 11: Interface Implementation Means](#tip-11-interface-implementation-means)
-- [Tip 12: Why we need Garbage Collector](#tip-12-why-we-need-garbage-collector)
-- [Tip 13: Delegates](#tip-13-delegates))
+- [cSharp Tips](#csharp-tips)
+  - [Table of Contents](#table-of-contents)
+  - [Tip 1: Method vs Function](#tip-1-method-vs-function)
+  - [Tip 2: Parameter Vs Argument](#tip-2-parameter-vs-argument)
+  - [Tip 3: Constructors](#tip-3-constructors)
+    - [Note](#note)
+  - [Tip 4: Static field vs Const](#tip-4-static-field-vs-const)
+  - [Tip 5: Using Static Statements](#tip-5-using-static-statements)
+  - [Tip 6: Destructor vs Deconstructer](#tip-6-destructor-vs-deconstructer)
+  - [Tip 7: Value vs Reference Type](#tip-7-value-vs-reference-type)
+  - [Tip 8: String type is a class](#tip-8-string-type-is-a-class)
+  - [Tip 9: Boxing vs Unboxing](#tip-9-boxing-vs-unboxing)
+  - [Tip 10: OOP](#tip-10-oop)
+  - [Tip 11: Interface Implementation Means](#tip-11-interface-implementation-means)
+  - [Tip 12: Why we need Garbage Collector](#tip-12-why-we-need-garbage-collector)
+  - [Tip 13: Delegates](#tip-13-delegates)
+  - [License](#license)
+  - [Contact](#contact)
 
 
 
@@ -271,7 +276,27 @@ references to the object in the process running your application.
 
 
 ## Tip 13: Delegates
-### Store method references in variables / Store a function within a variable/parameter
+Store method references in variables __Or__ Store a function within a variable/parameter
+- Some Examples:
+Storing a method reference in a delegate variable
+```csharp
+public delegate int MathOperation(int x, int y); // Define a delegate type
+class Program
+{
+    static void Main(string[] args)
+    {
+        MathOperation add = Add; // Assigning method reference to delegate variable
+        MathOperation multiply = Multiply; // Assigning another method reference
+        Console.WriteLine($"Addition: {add(5, 3)}"); // Output: 8
+        Console.WriteLine($"Multiplication: {multiply(5, 3)}"); // Output: 15
+    }
+    public static int Add(int x, int y) => x + y; // Method matching the delegate signature
+    public static int Multiply(int x, int y) => x * y; // Another method matching the delegate signature
+}
+```
+
+  
+
 
 ## License
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
